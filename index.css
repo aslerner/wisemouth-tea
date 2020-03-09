@@ -1,0 +1,613 @@
+
+/*GENERAL SITE HTML*/
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Fjalla One", sans-serif;
+    background-color: #2e2c2c;
+}
+
+footer {
+    background-color: #b90202;
+    color: #fafafa;
+    padding: 10px;
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    top: 150%;
+}
+
+h1.contact {
+    padding: 0 15px;
+    margin: 5px;
+}
+
+p.contact {
+    padding: 0 15px;
+    margin: 0;
+}
+
+.email {
+    grid-area: email;
+}
+
+.fone {
+    grid-area: fone;
+}
+
+.mass {
+    grid-area: mass;
+}
+
+.ri {
+    grid-area: ri;
+}
+
+.socialmedia {
+    grid-area: sm;
+}
+
+.contactbox {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+/*    grid-template-rows: minmax(300px, auto);*/
+    grid-gap: 10px;
+    grid-template-areas:
+        "email mass sm"
+        "fone ri sm";
+    padding: 0;
+/*
+    left: 10%;
+    top: 10%;
+*/
+    margin: 2%;
+    width: 94%;
+}
+
+/*SITE NAVIGATION BAR*/
+
+nav {
+    background-color: #2E2C2C;
+    padding: 5px;
+    position: sticky;
+    z-index: 1;
+}
+
+.wisenavcontainer {
+    display: inline;
+    float: right;
+    padding-right: 7px;
+    margin-top: 14px;
+}
+
+.wisenav {
+    display: inline;
+    padding: 0 9px 0 9px;
+    letter-spacing: 1px;
+    font-size: 24px;
+}
+
+img.wiseimg {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fafafa;
+}
+
+a:hover {
+    background-color: transparent;
+    color: #B90202;
+}
+
+.selected {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #B90202;
+}
+
+.sm:hover {
+    color: #fafafa;
+}
+
+.dropbtn {
+    background-color: #2e2c2c;
+    font-family: "Fjalla One", serif;
+    text-transform: uppercase;
+    color: #fafafa;
+    font-size: 24px;
+    border: none;
+    padding: 0 0 5px 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2e2c2c;
+    font-size: 20px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #fafafa;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+    color: #fafafa;
+    background-color: #b90202;
+}
+
+.dropdown-content a.selected {
+    color: #b90202;
+}
+
+.dropdown-content a.selected:hover {
+    background-color: transparent;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+    color: #b90202;
+}
+
+/*FRONT PAGE SCHEMANTICS*/
+
+.hero-image {
+    background-image: linear-gradient(rgba(92,92,92,0.4),rgba(92,92,92,0.4)), url(images/greatwall.jpg);
+    height: 75%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0a0a0a;
+    font-size: 20px;
+    background-color: rgb(255,255,255,0.6);
+    width: 50%;
+    padding: 0px 20px 0px 20px;
+    margin-top: 0;
+}
+
+h1.hero-title {
+    text-align: center;
+    color: #B90202;
+    padding: 0;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+ul.hero-info {
+    margin-top: 12px;
+}
+
+li.hero-info {
+    padding-bottom: 12px;
+    line-height: 100%;
+}
+
+li.hero-info2 {
+    line-height: 100%;
+}
+
+/*TEA MENU SCHEMANTICS*/
+
+.image {
+    background-color: #fafafa;
+    width: 100%;
+    height: 100%;
+}
+
+.frame {
+    width: 350px;
+    height: 350px;
+    padding: 17px;
+    margin: 0px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fafafa;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.2);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: #0a0a0a;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #B90202;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #fafafa;
+  color: #0a0a0a;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  color: #0a0a0a;
+}
+
+.romance {
+    grid-area: romance;
+    width: 400px;
+    height: 400px;
+    /* top: 50%;
+    left: 50%; */
+    background-color: #fafafa;
+}
+
+.romtitle {
+    color: #d7b768;
+    margin-bottom: 0;
+}
+
+.dragonrose {
+    grid-area: dragonrose;
+    width: 400px;
+    height: 400px;
+    background-color: #fafafa;
+}
+
+.dragontitle {
+    color: #da5b55;
+    margin-bottom: 0;
+}
+
+.orangetea {
+    grid-area: orangetea;
+    width: 400px;
+    height: 400px;
+    background-color: #fafafa;
+}
+
+.orangetitle {
+    color: #f0bf49;
+    margin-bottom: 0;
+}
+
+.puerh {
+    grid-area: puerh;
+    width: 400px;
+    height: 400px;
+    background-color: #fafafa;
+}
+
+.putitle {
+    color: #99674c;
+    margin-bottom: 0;
+}
+
+.monk {
+    grid-area: monk;
+    width: 400px;
+    height: 400px;
+    background-color: #fafafa;
+}
+
+.montitle {
+    color: #562e2a;
+    margin-bottom: 0;
+}
+
+.pumpkin {
+    grid-area: pumpkin;
+    width: 400px;
+    height: 400px;
+    background-color: #fafafa;
+    margin-bottom: 5%;
+}
+
+.pumptitle {
+    color: #f0883f;
+    margin-bottom: 0;
+}
+
+.jasmine {
+    grid-area: jasmine;
+    width: 400px;
+    height: 400px;
+    background-color: #fafafa;
+}
+
+.jastitle {
+    color: #e2784e;
+    margin-bottom: 0;
+}
+
+.boxdes {
+    grid-area: des;
+    width: 820px;
+    background-color: #fafafa;
+    padding: 10px;
+}
+
+.teades {
+    margin: 0;
+}
+
+.ingredients {
+    margin-top: 0;
+}
+
+.teabox {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+/*    grid-template-rows: minmax(300px, auto);*/
+    grid-gap: 2% 5%;
+    grid-template-areas:
+        "des des"
+        "dragonrose romance"
+        "jasmine orangetea"
+        "puerh monk"
+        "pumpkin .";
+    padding: 2% 4%;
+    left: 10%;
+    top: 10%;
+    margin: 2%;
+}
+
+/*HEALTHY FOOD SCHEMANTICS*/
+
+/*REMEDIES SCHEMANTICS*/
+
+/*ABOUT PAGE SCHEMANTICS*/
+
+.heroine-image {
+    background-image: linear-gradient(rgba(92,92,92,0.2),rgba(92,92,92,0.2)), url(images/nicholsfamily.png);
+    height: 75%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.heroine-text {
+    text-align: left;
+    position: absolute;
+    top: 72%;
+    left: 52%;
+/*    transform: translate(-50%, -50%);*/
+    color: #fafafa;
+    font-size: 38px;
+    width: 50%;
+    padding: 0px 20px 0px 20px;
+    text-shadow: 2px 1px rgb(92,92,92);
+    margin-top: 0;
+}
+
+.story {
+    color: #fafafa;
+    grid-area: story;
+}
+
+.name {
+    color: #fafafa;
+    grid-area: name;
+}
+
+.why {
+    color: #fafafa;
+    grid-area: why;
+}
+
+.youtube {
+    grid-area: youtube;
+}
+
+.about {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(400px, auto);
+    grid-gap: 1% 5%;
+    grid-template-areas: 
+        "story name"
+        "youtube why";
+    padding: 15px;
+}
+
+h1.teatle {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/*LOCATION SCHEMANTICS*/
+
+.atlas-image {
+    background-image: linear-gradient(rgba(92,92,92,0.1),rgba(92,92,92,0.1)), url(images/map.jpg);
+    height: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.atlas-text {
+    text-align: left;
+    position: absolute;
+    top: 78%;
+    left: 62%;
+/*    transform: translate(-50%, -50%);*/
+    color: #fafafa;
+    font-size: 65px;
+    width: 20%;
+    padding: 0px 20px 0px 20px;
+    text-shadow: 2px 1px rgb(92,92,92);
+    margin-top: 0;
+}
+
+.shell {
+    width: 86%;
+    padding: 7%;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #fafafa;
+  color: #B90202;
+  font-size: 19px;
+   font-weight: 500;
+    font-family: "Fjalla One", sans-serif; 
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 11px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 1.7%;
+  background-color: #fafafa;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+    margin-bottom: 10px;
+}
+
+/*MEDIA ITEMS ACROSS THE SITE*/
+
+.cover-video1 { 
+    position: absolute;
+    width: 500px;
+    min-width: 200px;
+    height: 315px;
+    top: 90%;
+    left: 4%;
+    margin: 10px 10px 20px 10px;
+    grid-area: cover-video1;
+}
+
+.cover-video2 {
+    position: absolute;
+    width: 500px;
+    min-width: 200px;
+    height: 315px;
+    top: 90%;
+    right: 4%;
+    margin: 10px 10px 20px 10px;
+    grid-area: cover-video2;
+}
+
+.about-video {
+    width: 500px;
+    min-width: 200px;
+    height: 315px;
+}
+
+.cover {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+/*    grid-template-rows: minmax(300px, auto);*/
+    grid-gap: 15%;
+    grid-template-areas: 
+        "one two";
+    padding: 15px; 
+}
+
+footer.blog-roll {
+    padding: 5px;
+    position: sticky;
+}
+
+.blog-item {
+    min-height: 300px;
+    min-width: 300px;
+    display: inline;
+}
